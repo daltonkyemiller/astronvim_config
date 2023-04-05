@@ -9,4 +9,14 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+    'olimorris/onedarkpro.nvim',
+    {
+      'onsails/lspkind-nvim',
+      opts = function(_, opts)
+        opts.preset = "codicons"
+        return opts
+      end
+    },
+  }
 }
