@@ -65,6 +65,7 @@ return {
   polish = function()
     -- Sets up environment variables
     require('user.env')
+    vim.fn.setenv("FIG_TERM", nil)
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {

@@ -32,6 +32,22 @@ return {
     -- move lines up and down
     ["<A-j>"] = ":m .+1<CR>==",
     ["<A-k>"] = ":m .-2<CR>==",
+    -- Hop Config
+    ["<Leader><Leader>t"] = "<cmd>HopPattern<CR>",
+    ["<leader>fw"] = { function() require("telescope.builtin").live_grep({ additional_args = '--pcre2' }) end,
+      desc = "Live Grep With --pcre2" },
+    ["<leader>fg"] = {
+      function()
+        require('telescope').extensions.live_grep_args.live_grep_args()
+      end,
+      desc = "Live Grep With Args"
+    },
+    ["<leader>lo"] = {
+      function()
+        vim.lsp.buf.execute_command({ command = "typescript.organizeImports", arguments = { vim.fn.expand("%:p") } })
+      end,
+      desc = "Organize Imports",
+    }
   },
   v = {
     -- remapping go to beginning and end of line to , and . respectively
@@ -40,6 +56,8 @@ return {
     ["L"] = "$",
     ["<A-j>"] = ":m '>+1<CR>gv=gv",
     ["<A-k>"] = ":m '<-2<CR>gv=gv",
+    -- Hop Config
+    ["<Leader><Leader>t"] = "<cmd>HopPattern<CR>",
   },
   t = {
     -- setting a mapping to false will disable it
