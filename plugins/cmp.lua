@@ -12,10 +12,10 @@ return {
       i = cmp.mapping.complete({})
     })
     opts.sources = cmp.config.sources {
-      { name = "ultisnips", priority = 1000 },
-      { name = "nvim_lsp",  priority = 750 },
-      { name = "luasnip",   priority = 500 },
-      { name = "buffer",    priority = 250 },
+      { name = "nvim_lsp",  priority = 100 },
+      { name = "ultisnips", priority = 75 },
+      { name = "luasnip",   priority = 50 },
+      { name = "buffer",    priority = 25 },
       { name = "path",      priority = 0 },
     }
 

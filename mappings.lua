@@ -34,9 +34,7 @@ return {
     ["<A-k>"] = ":m .-2<CR>==",
     -- Hop Config
     ["<Leader><Leader>t"] = "<cmd>HopPattern<CR>",
-    ["<leader>fw"] = { function() require("telescope.builtin").live_grep({ additional_args = '--pcre2' }) end,
-      desc = "Live Grep With --pcre2" },
-    ["<leader>fg"] = {
+    ["<leader>fw"] = {
       function()
         require('telescope').extensions.live_grep_args.live_grep_args()
       end,
@@ -47,6 +45,12 @@ return {
         vim.lsp.buf.execute_command({ command = "typescript.organizeImports", arguments = { vim.fn.expand("%:p") } })
       end,
       desc = "Organize Imports",
+    },
+    ["<leader>fu"] = {
+      function()
+        require("telescope").extensions.undo.undo()
+      end,
+      desc = "Telescope Undo Tree",
     }
   },
   v = {

@@ -65,7 +65,14 @@ return {
   polish = function()
     -- Sets up environment variables
     require('user.env')
+    -- Fig setup
     vim.fn.setenv("FIG_TERM", nil)
+    -- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    --   vim.lsp.diagnostic.on_publish_diagnostics, {
+    --     -- Enable signs
+    --     signs = true,
+    --   }
+    -- )
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
