@@ -4,6 +4,8 @@ return {
     opts.filesystem.filtered_items = {
       visible = true
     }
+    opts.default_source = "filesystem"
+
     return opts
   end
 }

@@ -10,7 +10,16 @@ return {
   --   end,
   -- },
   {
-    'olimorris/onedarkpro.nvim',
+    {
+      'olimorris/onedarkpro.nvim',
+      config = function()
+        require("onedarkpro").setup({
+          options = {
+            transparency = true
+          }
+        })
+      end
+    },
     {
       'onsails/lspkind-nvim',
       opts = function(_, opts)

@@ -67,6 +67,17 @@ return {
     require('user.env')
     -- Fig setup
     vim.fn.setenv("FIG_TERM", nil)
+
+    -- vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+    -- vim.cmd("hi CursorColumn cterm=NONE ctermbg=NONE ctermfg=NONE")
+    -- vim.cmd("hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE")
+    -- vim.cmd("hi CursorLineNr cterm=NONE ctermbg=NONE ctermbg=NONE")
+    -- vim.cmd("hi clear LineNr")
+    -- vim.cmd("hi clear SignColumn")
+    -- vim.cmd("hi clear StatusLine")
+
+
+
     -- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     --   vim.lsp.diagnostic.on_publish_diagnostics, {
     --     -- Enable signs
