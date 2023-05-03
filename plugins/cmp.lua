@@ -9,7 +9,13 @@ return {
   opts = function(_, opts)
     local cmp = require('cmp')
     opts.mapping['<A-Space>'] = cmp.mapping({
-      i = cmp.mapping.complete({})
+      i = function()
+        if cmp.visible() then
+          cmp.close()
+        else
+          cmp.complete()
+        end
+      end
     })
     opts.sources = cmp.config.sources {
       { name = "nvim_lsp",  priority = 100 },
@@ -22,8 +28,10 @@ return {
 
     opts.formatting.fields = { "abbr", "kind", "menu" }
 
+
     opts.formatting.format = function(entry, vim_item)
       vim_item.kind = require("lspkind").presets.codicons[vim_item.kind]
+
 
       -- vim_item.menu = ({
       --   nvim_lsp = "[LSP]",

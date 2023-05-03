@@ -29,9 +29,6 @@ return {
     -- keeps the cursor in the middle of the screen when scrolling
     ["<C-d>"] = "<C-d>zz",
     ["<C-u>"] = "<C-u>zz",
-    -- move lines up and down
-    ["<A-j>"] = ":m .+1<CR>==",
-    ["<A-k>"] = ":m .-2<CR>==",
     -- Hop Config
     ["<Leader><Leader>t"] = "<cmd>HopPattern<CR>",
     ["<leader>fw"] = {
@@ -42,7 +39,7 @@ return {
     },
     ["<leader>lo"] = {
       function()
-        vim.lsp.buf.execute_command({ command = "typescript.organizeImports", arguments = { vim.fn.expand("%:p") } })
+        vim.lsp.buf.execute_command({ command = "_typescript.organizeImports", arguments = { vim.fn.expand("%:p") } })
       end,
       desc = "Organize Imports",
     },
@@ -55,11 +52,8 @@ return {
   },
   v = {
     -- remapping go to beginning and end of line to , and . respectively
-    -- move lines up and down
     ["H"] = "^",
     ["L"] = "$",
-    ["<A-j>"] = ":m '>+1<CR>gv=gv",
-    ["<A-k>"] = ":m '<-2<CR>gv=gv",
     -- Hop Config
     ["<Leader><Leader>t"] = "<cmd>HopPattern<CR>",
   },
