@@ -2,15 +2,14 @@ return {
   'neovim/nvim-lspconfig',
   config = function(plugin, opts)
     require("plugins.configs.lspconfig")(plugin, opts)
+    -- require('lspconfig').cssmodules_ls.setup {}
 
     -- Tailwind CSS enabled for clsx
     require('lspconfig').tailwindcss.setup({
       settings = {
         tailwindCSS = {
           experimental = {
-            classRegex = {
-              "clsx\\(([^)]*)\\)"
-            }
+            classRegex = { "clsx\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)" }
           }
         }
       }
