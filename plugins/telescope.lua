@@ -10,7 +10,10 @@ return {
     opts.defaults.layout_config = {
       vertical = { width = 0.9 }
     }
+
     opts.defaults.file_ignore_patterns = { "node_modules", ".git", "dist", "^DEPRECATED", "^deprecated" }
+    local icons = require("nvim-nonicons")
+    opts.defaults.prompt_prefix = "  " .. icons.get("telescope") .. "  "
     require('plugins.configs.telescope')(plugin, opts)
     local telescope = require('telescope')
     telescope.load_extension('live_grep_args')

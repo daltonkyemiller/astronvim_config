@@ -5,7 +5,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
-      ensure_installed = { "eslint", "lua_ls", "emmet_ls", "tsserver", "tailwindcss", "astro", "cssls", "html",
+      ensure_installed = { "eslint", "lua_ls", "emmet_ls", "vtsls", "tailwindcss", "astro", "cssls", "html",
         "prismals" },
     },
   },
