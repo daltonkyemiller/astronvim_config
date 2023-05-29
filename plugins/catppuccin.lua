@@ -83,9 +83,10 @@ return {
           NvimTreeIndentMarker = { link = "IndentBlanklineChar" },
           NvimTreeExecFile = { fg = colors.text },
           -- Glance
-          GlancePreviewNormal = { bg = colors.surface0 },
-          GlancePreviewMatch = { bg = colors.surface0 },
+          GlancePreviewNormal = { bg = colors.mantle },
+          GlancePreviewMatch = { bg = colors.mantle },
           GlanceListNormal = { bg = colors.surface0 },
+          GlanceListCursorLine = { bg = colors.mantle }
 
         }
       end,
