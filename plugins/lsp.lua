@@ -9,7 +9,7 @@ return {
       settings = {
         tailwindCSS = {
           experimental = {
-            classRegex = { "cn\\(([^)]*)\\)", "clsx\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)" }
+            classRegex = { "(clsx|cn)\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)" }
           }
         }
       }

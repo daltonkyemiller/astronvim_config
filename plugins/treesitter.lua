@@ -3,7 +3,9 @@ return {
   dependencies = {
     'nvim-treesitter/nvim-treesitter-context',
     'nvim-treesitter/nvim-treesitter-textobjects',
-    'andymass/vim-matchup'
+    'andymass/vim-matchup',
+    'nvim-treesitter/playground'
+
   },
   config = function(plugin, opts)
     opts.highlight.additional_vim_regex_highlighting = true
@@ -29,25 +31,26 @@ return {
             ["ip"] = { query = "@parameter.inner", desc = "inside a parameter" },
           },
           selection_modes = {
-            ["@parameter.outer"] = "v",     -- charwise
-            ["@parameter.inner"] = "v",     -- charwise
-            ["@function.outer"] = "v",      -- charwise
-            ["@conditional.outer"] = "V",   -- linewise
-            ["@loop.outer"] = "V",          -- linewise
-            ["@class.outer"] = "<c-v>",     -- blockwise
+            ["@parameter.outer"] = "v",   -- charwise
+            ["@parameter.inner"] = "v",   -- charwise
+            ["@function.outer"] = "v",    -- charwise
+            ["@conditional.outer"] = "V", -- linewise
+            ["@loop.outer"] = "V",        -- linewise
+            ["@class.outer"] = "<c-v>",   -- blockwise
           },
           include_surrounding_whitespace = false,
         },
-        swap = {
-          enable = true,
-          swap_next = {
-            ["<leader>a"] = "@parameter.inner",
-          },
-          swap_previous = {
-            ["<leader>A"] = "@parameter.inner",
-          },
-
-        }
+        -- swap = {
+        --   enable = true,
+        --   swap_next = {
+        --     -- ["<leader>a"] = "@parameter.inner",
+        --     ["<leader>a"] = "@iswap-list",
+        --   },
+        --   swap_previous = {
+        --     ["<leader>A"] = "@parameter.inner",
+        --   },
+        --
+        -- }
       },
       matchup = {
         enable = true,
