@@ -5,6 +5,7 @@ return {
     require('glance').setup({
       list = {
         position = "left",
+        width = 30,
       }
     })
 

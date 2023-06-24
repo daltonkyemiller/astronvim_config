@@ -29,8 +29,6 @@ return {
     -- keeps the cursor in the middle of the screen when scrolling
     ["<C-d>"] = "<C-d>zz",
     ["<C-u>"] = "<C-u>zz",
-    -- Hop Config
-    ["<Leader><Leader>t"] = "<cmd>HopPattern<CR>",
     ["<leader>fw"] = {
       function()
         require('telescope').extensions.live_grep_args.live_grep_args()

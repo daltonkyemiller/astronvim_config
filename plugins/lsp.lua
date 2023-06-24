@@ -2,28 +2,26 @@ return {
   'neovim/nvim-lspconfig',
   config = function(plugin, opts)
     require("plugins.configs.lspconfig")(plugin, opts)
-    -- require('lspconfig').cssmodules_ls.setup {}
+    local lspconfig = require('lspconfig')
 
     -- Tailwind CSS enabled for clsx
-    require('lspconfig').tailwindcss.setup({
+    lspconfig.tailwindcss.setup({
       settings = {
         tailwindCSS = {
           experimental = {
-            classRegex = { "(clsx|cn)\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)" }
+            classRegex = { "*(?:(clsx|cn))\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)" }
           }
         }
       }
     })
 
-    -- require("lspconfig").vtsls.setup {
-    --   handlers = {
-    --     ["textDocument/publishDiagnostics"] = vim.lsp.with(
-    --       vim.lsp.diagnostic.on_publish_diagnostics, {
-    --         -- Enable signs
-    --         signs = true,
-    --       }
-    --     )
-    --   }
+    -- local util = require 'lspconfig.util'
+    -- lspconfig.vtsls.setup {
+    --   root_dir = util.root_pattern(".git")
+    --
     -- }
+
+
+    lspconfig.sourcekit.setup {}
   end,
 }

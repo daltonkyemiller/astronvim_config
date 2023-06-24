@@ -37,6 +37,15 @@ return {
           -- "python",
         },
       },
+      filter = function(client)
+        local ft = vim.bo.filetype
+        -- only enable null-ls formatting for typescript and javascript
+        if ft == "typescriptreact" or ft == "typescript" or ft == "javascriptreact" or ft == 'javascript' then
+          return client.name == "null-ls"
+        end
+
+        return true
+      end,
       disabled = { -- disable formatting capabilities for the listed language servers
         -- "sumneko_lua",
       },
@@ -72,22 +81,6 @@ return {
     -- prevent comment on new line
     vim.api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
 
-    -- vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
-    -- vim.cmd("hi CursorColumn cterm=NONE ctermbg=NONE ctermfg=NONE")
-    -- vim.cmd("hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE")
-    -- vim.cmd("hi CursorLineNr cterm=NONE ctermbg=NONE ctermbg=NONE")
-    -- vim.cmd("hi clear LineNr")
-    -- vim.cmd("hi clear SignColumn")
-    -- vim.cmd("hi clear StatusLine")
-
-
-
-    -- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    --   vim.lsp.diagnostic.on_publish_diagnostics, {
-    --     -- Enable signs
-    --     signs = true,
-    --   }
-    -- )
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {

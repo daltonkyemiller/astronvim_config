@@ -1,3 +1,11 @@
+local null_ls = require("null-ls")
+
+-- I don't want eslint to throw errors saying it can't find the config file if I am in a project that doesn't use eslint.
+local function has_eslint_file(utils)
+  return utils.root_has_file({ '.eslintrc', '.eslintrc.json', '.eslintrc.js', '.eslintrc.cjs', '.eslintrc.yaml',
+    '.eslintrc.yml', '.eslintrc.ts' })
+end
+
 -- customize mason plugins
 return {
   -- use mason-lspconfig to configure LSP installations
@@ -5,7 +13,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
-      ensure_installed = { "eslint", "lua_ls", "emmet_ls", "vtsls", "tailwindcss", "astro", "cssls", "html",
+      ensure_installed = { "vtsls", "lua_ls", "emmet_ls", "tailwindcss", "astro", "cssls", "html",
         "prismals" },
     },
   },
@@ -14,8 +22,17 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = { "prettier", },
+      ensure_installed = { "prettierd", "eslint_d" },
       handlers = {
+        function() end, -- disables automatic setup of all null-ls sources
+        prettierd = function(source_name, methods)
+          null_ls.register(null_ls.builtins.formatting.prettierd)
+        end,
+        eslint_d = function(source_name, methods)
+          null_ls.register(null_ls.builtins.diagnostics.eslint_d.with({ condition = has_eslint_file }))
+          null_ls.register(null_ls.builtins.code_actions.eslint_d.with({ condition = has_eslint_file }))
+        end
+
       }
     },
   },
