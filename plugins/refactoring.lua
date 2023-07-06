@@ -2,7 +2,7 @@ return {
   'ThePrimeagen/refactoring.nvim',
   event = 'BufRead',
   config = function()
-    require('refactoring').setup()
+    require('refactoring').setup({})
     -- load refactoring Telescope extension
     require("telescope").load_extension("refactoring")
 

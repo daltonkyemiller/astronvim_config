@@ -9,11 +9,13 @@ return {
       settings = {
         tailwindCSS = {
           experimental = {
-            classRegex = { "*(?:(clsx|cn))\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)" }
+            classRegex = { "*(?:(clsx|cn))\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)",
+              "*(?:Class|class|classes)?=\\s*(?:\"|'|{`)([^(?:\"|'|`})]*)" }
           }
         }
       }
     })
+
 
     -- local util = require 'lspconfig.util'
     -- lspconfig.vtsls.setup {

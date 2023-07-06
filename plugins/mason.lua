@@ -22,7 +22,7 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = { "prettierd", "eslint_d" },
+      ensure_installed = { "prettierd", },
       handlers = {
         function() end, -- disables automatic setup of all null-ls sources
         prettierd = function(source_name, methods)
@@ -38,6 +38,8 @@ return {
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
+    disable = true,
+
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
       -- ensure_installed = { "python" },
