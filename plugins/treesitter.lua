@@ -3,7 +3,7 @@ return {
   dependencies = {
     'nvim-treesitter/nvim-treesitter-context',
     'nvim-treesitter/nvim-treesitter-textobjects',
-    'andymass/vim-matchup',
+    { 'andymass/vim-matchup', commit = "3a48818" },
     'nvim-treesitter/playground'
 
   },
@@ -40,6 +40,7 @@ return {
           },
           include_surrounding_whitespace = false,
         },
+
         -- swap = {
         --   enable = true,
         --   swap_next = {
@@ -51,9 +52,6 @@ return {
         --   },
         --
         -- }
-      },
-      matchup = {
-        enable = true,
       },
     })
 

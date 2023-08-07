@@ -14,7 +14,7 @@ return {
         mocha = {
           rosewater = "#EA6962",
           flamingo = "#EA6962",
-          pink = "#D3869B",
+          pink = "#d3869b",
           mauve = "#D3869B",
           red = "#EA6962",
           maroon = "#EA6962",
