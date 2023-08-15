@@ -3,7 +3,7 @@ return {
   dependencies = {
     'nvim-treesitter/nvim-treesitter-context',
     'nvim-treesitter/nvim-treesitter-textobjects',
-    { 'andymass/vim-matchup', commit = "3a48818" },
+    'andymass/vim-matchup',
     'nvim-treesitter/playground'
 
   },

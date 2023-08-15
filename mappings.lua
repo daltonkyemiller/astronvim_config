@@ -1,4 +1,4 @@
--- Mapping data with "desc" stored directly by vim.keymap.set().
+-- Mapping data with "desc" stored directly byder>q vimder>q.keymap.set().
 --
 -- Please use this mappings table to set keyboard mapping since this is the
 -- lower level configuration and more robust one. (which-key will
@@ -14,7 +14,7 @@ return {
         require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
           require("astronvim.utils.buffer").close(
             bufnr)
-        end)
+       end)
       end,
       desc = "Pick to close",
     },
@@ -46,6 +46,16 @@ return {
         require("telescope").extensions.undo.undo()
       end,
       desc = "Telescope Undo Tree",
+    },
+    ["<leader>E"] = {
+      function()
+        vim.diagnostic.open_float()
+        vim.diagnostic.open_float()
+        vim.cmd.execute("'normal! ggyG'")
+        vim.cmd.execute("'confirm quit'")
+        vim.cmd.execute("'normal! p'")
+
+      end,
     }
   },
   v = {

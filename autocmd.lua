@@ -1,0 +1,9 @@
+-- vim.notify("Loaded autocmd.lua")
+--
+-- vim.api.nvim_create_autocmd({"BufUnload"}, {
+--   pattern = {"*"},
+--   callback = function ()
+--     vim.lsp.buf.format()
+--
+--   end
+-- })

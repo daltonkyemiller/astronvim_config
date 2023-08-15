@@ -81,6 +81,10 @@ return {
     -- prevent comment on new line
     vim.api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
 
+    require("user.autocmd")
+
+
+
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {

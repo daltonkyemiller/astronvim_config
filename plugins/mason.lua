@@ -25,9 +25,6 @@ return {
       ensure_installed = { "prettierd", },
       handlers = {
         function() end, -- disables automatic setup of all null-ls sources
-        prettierd = function(source_name, methods)
-          null_ls.register(null_ls.builtins.formatting.prettierd)
-        end,
         eslint_d = function(source_name, methods)
           null_ls.register(null_ls.builtins.diagnostics.eslint_d.with({ condition = has_eslint_file }))
           null_ls.register(null_ls.builtins.code_actions.eslint_d.with({ condition = has_eslint_file }))

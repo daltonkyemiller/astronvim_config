@@ -8,14 +8,14 @@ return {
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     config.sources = {
-      null_ls.builtins.diagnostics.cspell.with({
-        -- Force the severity to be HINT
-        diagnostics_postprocess = function(diagnostic)
-          diagnostic.severity = vim.diagnostic.severity.HINT
-        end,
-      }),
-      null_ls.builtins.code_actions.cspell
-      -- null_ls.builtins.formatting.prettierd,
+      null_ls.builtins.formatting.prettierd,
+      -- null_ls.builtins.diagnostics.cspell.with({
+      --   -- Force the severity to be HINT
+      --   diagnostics_postprocess = function(diagnostic)
+      --     diagnostic.severity = vim.diagnostic.severity.HINT
+      --   end,
+      -- }),
+      -- null_ls.builtins.code_actions.cspell,
       -- null_ls.builtins.diagnostics.eslint,
       -- null_ls.builtins.code_actions.eslint
       -- Set a formatter
