@@ -13,8 +13,8 @@ return {
     "williamboman/mason-lspconfig.nvim",
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
-      ensure_installed = { "vtsls", "lua_ls", "emmet_ls", "tailwindcss", "astro", "cssls", "html",
-        "prismals" },
+      ensure_installed = { "tsserver", "lua_ls", "emmet_ls", "tailwindcss", "astro", "cssls", "html",
+        "prismals", "sqlls" },
     },
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources

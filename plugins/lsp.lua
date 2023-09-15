@@ -1,5 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
+  event = "VeryLazy",
   config = function(plugin, opts)
     require("plugins.configs.lspconfig")(plugin, opts)
     local lspconfig = require('lspconfig')
@@ -15,6 +16,11 @@ return {
         }
       }
     })
+
+    -- lspconfig.sqlls.setup({
+    --   root_dir = lspconfig.util.root_pattern(".git")
+    -- })
+
 
 
     -- local util = require 'lspconfig.util'

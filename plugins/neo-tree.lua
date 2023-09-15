@@ -5,6 +5,7 @@ return {
       visible = true
     }
     opts.default_source = "filesystem"
+    -- opts.window.position = "float"
 
     return opts
   end

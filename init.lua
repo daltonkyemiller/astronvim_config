@@ -29,7 +29,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true,     -- enable or disable format on save globally
+        enabled = false,     -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -73,15 +73,10 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
-    -- Sets up environment variables
-    -- require('user.env')
     -- Fig setup
     vim.fn.setenv("FIG_TERM", nil)
 
-    -- prevent comment on new line
-    vim.api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
-
-    require("user.autocmd")
+    require("user.autocmd").setup()
 
 
 
